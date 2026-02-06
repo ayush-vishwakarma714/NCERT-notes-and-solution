@@ -269,7 +269,7 @@ tiltEls.forEach(el => {
       <p style="margin:0 0 12px 0;color:#cbd5ff">The page you requested isn't available yet. We're working to add full class/subject content soon. Meanwhile you can:</p>
       <div style="display:flex;gap:8px;justify-content:flex-end">
         <button id="${overlayId}-close" style="background:transparent;border:1px solid rgba(255,255,255,0.08);padding:8px 10px;border-radius:8px;color:#dbeafe;cursor:pointer">Close</button>
-        <a id="${overlayId}-home" href="index.html" style="background:var(--green);padding:8px 12px;border-radius:8px;color:#07120a;text-decoration:none;font-weight:700">Back to Home</a>
+        <a id="${overlayId}-home" href="/index.html" style="background:var(--green);padding:8px 12px;border-radius:8px;color:#07120a;text-decoration:none;font-weight:700">Back to Home</a>
       </div>
     </div>
   `;
