@@ -15,14 +15,89 @@ if (navToggle && nav) {
   navToggle.addEventListener('click', () => nav.classList.toggle('open'));
 }
 
-// simple search handler (keeps your original behaviour)
+/* ---------- SEARCH INDEX (UPDATED & EXPANDED) ---------- */
+const SEARCH_INDEX = [
+
+  /* ===== CLASS 1 – MATHEMATICS ===== */
+  { keys: ['class 1 math', 'class1 math', 'class 1 maths', 'class1 maths'], url: '/class1/class1-math.html' },
+
+  { keys: ['class 1 math chapter 1', 'class1 math chapter 1', 'shapes and space'], url: '/class1/math/chapter1.html' },
+  { keys: ['class 1 math chapter 2', 'numbers from one to nine'], url: '/class1/math/chapter2.html' },
+  { keys: ['class 1 math chapter 3', 'addition'], url: '/class1/math/chapter3.html' },
+  { keys: ['class 1 math chapter 4', 'subtraction'], url: '/class1/math/chapter4.html' },
+  { keys: ['class 1 math chapter 5', 'numbers from ten to twenty'], url: '/class1/math/chapter5.html' },
+  { keys: ['class 1 math chapter 6', 'time'], url: '/class1/math/chapter6.html' },
+  { keys: ['class 1 math chapter 7', 'measurement'], url: '/class1/math/chapter7.html' },
+  { keys: ['class 1 math chapter 8', 'numbers from twenty one to fifty'], url: '/class1/math/chapter8.html' },
+  { keys: ['class 1 math chapter 9', 'data handling'], url: '/class1/math/chapter9.html' },
+
+  /* ===== CLASS 1 – SCIENCE ===== */
+  { keys: ['class 1 science', 'class1 science'], url: '/class1/class1-science.html' },
+
+  { keys: ['class 1 science chapter 1', 'plants around us'], url: '/class1/science/chapter1.html' },
+  { keys: ['class 1 science chapter 2', 'animals around us'], url: '/class1/science/chapter2.html' },
+  { keys: ['class 1 science chapter 3', 'food we eat'], url: '/class1/science/chapter3.html' },
+  { keys: ['class 1 science chapter 4', 'water'], url: '/class1/science/chapter4.html' },
+  { keys: ['class 1 science chapter 5', 'shelter'], url: '/class1/science/chapter5.html' },
+
+  /* ===== CLASS PAGES ===== */
+  { keys: ['class 1', 'class1'], url: '/class1/class1.html' },
+  { keys: ['class 2', 'class2'], url: '/class2/class2.html' },
+  { keys: ['class 3', 'class3'], url: '/class3/class3.html' },
+  { keys: ['class 4', 'class4'], url: '/class4/class4.html' },
+  { keys: ['class 5', 'class5'], url: '/class5/class5.html' },
+  { keys: ['class 6', 'class6'], url: '/class6/class6.html' },
+  { keys: ['class 7', 'class7'], url: '/class7/class7.html' },
+  { keys: ['class 8', 'class8'], url: '/class8/class8.html' },
+  { keys: ['class 9', 'class9'], url: '/class9/class9.html' },
+  { keys: ['class 10', 'class10'], url: '/class10/class10.html' },
+  { keys: ['class 11', 'class11'], url: '/class11/class11.html' },
+  { keys: ['class 12', 'class12'], url: '/class12/class12.html' }
+
+];
+
+/* ---------- WORKING SEARCH BAR ---------- */
+const searchInput = document.getElementById('searchInput');
 const searchBtn = document.getElementById('searchBtn');
-if (searchBtn) {
-  searchBtn.addEventListener('click', () => {
-    const q = (document.getElementById('searchInput')?.value || '').trim().toLowerCase();
-    if (!q) { location.hash = '#notes'; return; }
-    if (q.includes('class')) location.hash = '#classes';
-    else location.hash = '#notes';
+
+function normalize(text) {
+  return text.toLowerCase().replace(/\s+/g, ' ').trim();
+}
+
+function handleSearch() {
+  const query = normalize(searchInput.value);
+  if (!query) return;
+
+  const match = SEARCH_INDEX.find(item =>
+    item.keys.some(k => query.includes(normalize(k)))
+  );
+
+  if (!match) {
+    // show your existing overlay (content coming soon)
+    const overlay = document.getElementById('ncert-missing-overlay');
+    if (overlay) overlay.style.display = 'flex';
+    return;
+  }
+
+  // check if page exists before redirect
+  fetch(match.url, { method: 'HEAD' })
+    .then(res => {
+      if (res.ok) window.location.href = match.url;
+      else {
+        const overlay = document.getElementById('ncert-missing-overlay');
+        if (overlay) overlay.style.display = 'flex';
+      }
+    })
+    .catch(() => {
+      const overlay = document.getElementById('ncert-missing-overlay');
+      if (overlay) overlay.style.display = 'flex';
+    });
+}
+
+if (searchBtn) searchBtn.addEventListener('click', handleSearch);
+if (searchInput) {
+  searchInput.addEventListener('keydown', e => {
+    if (e.key === 'Enter') handleSearch();
   });
 }
 

@@ -1,112 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NCERT Notes & Solutions | 3D</title>
-  <link rel="stylesheet" href="/style.css" />
-  <meta name="description" content="Free NCERT notes and exercise solutions for Classes 1–12 with an interactive 3D experience." />
+  <meta charset="UTF-8">
+
+  <title>NCERT 3D Hub – Free NCERT Notes & Solutions (Classes 1–12)</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="NCERT 3D Hub provides free NCERT notes and exercise solutions for Classes 1 to 12. Simple explanations, chapter-wise answers, and fast access for students.">
+
+  <!-- Styles -->
+  <link rel="preload" href="/style.css" as="style">
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Performance -->
+  <link rel="preconnect" href="https://unpkg.com">
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="logo">
-        <span class="logo-mark">📘</span>
-        <span class="logo-text">NCERT Notes and Solutions </span>
-      </a>
-      <nav class="nav">
-        <a href="index.html#home">Home</a>
-        <a href="index.html#notes">Notes</a>
-        <a href="index.html#notes">Solutions</a>
-        <a href="index.html#classes">Classes</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="logo">
+      📘 <span>NCERT 3D Hub</span>
+    </a>
+
+    <nav class="nav">
+      <a href="#home">Home</a>
+      <a href="#classes">Classes</a>
+      <a href="#notes">Subjects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+  <canvas id="scene" aria-hidden="true"></canvas>
+
+  <div class="hero-overlay container">
+    <h1>
+      NCERT <span>Notes &amp; Solutions</span><br>
+      for Classes 1–12
+    </h1>
+
+    <p>
+      Chapter-wise NCERT answers • Simple explanations • 100% Free
+    </p>
+
+    <form class="search" role="search" aria-label="Search NCERT content" onsubmit="return false;">
+      <input
+        id="searchInput"
+        type="search"
+        placeholder="Search class, subject or chapter…"
+        aria-label="Search NCERT notes and solutions">
+      <button type="button" id="searchBtn">Search</button>
+    </form>
+
+    <div class="hero-quick">
+      <a href="#classes" class="btn primary">Browse Classes</a>
+      <a href="#notes" class="btn">Explore Subjects</a>
     </div>
-  </header>
+  </div>
+</section>
 
-  <section id="home" class="hero">
-    <canvas id="scene"></canvas>
-    <div class="hero-overlay container">
-      <h1>Fresh, Complete NCERT <span>Notes &amp; Solutions</span></h1>
-      <p>Classes 1–12 • All subjects • Free access</p>
+<!-- ================= CLASSES ================= -->
+<section id="classes" class="section container">
+  <h2 class="section-title">NCERT Notes by Class</h2>
 
-      <form class="search" id="searchForm" onsubmit="return false;">
-        <input id="searchInput" type="search" placeholder="Search: class, subject, chapter…" aria-label="Search notes" />
-        <button type="button" id="searchBtn">Search</button>
-      </form>
+  <div class="grid grid-classes">
+    <a class="card tilt" href="/class1/class1.html">Class 1</a>
+    <a class="card tilt" href="/class2/class2.html">Class 2</a>
+    <a class="card tilt" href="/class3/class3.html">Class 3</a>
+    <a class="card tilt" href="/class4/class4.html">Class 4</a>
+    <a class="card tilt" href="/class5/class5.html">Class 5</a>
+    <a class="card tilt" href="/class6/class6.html">Class 6</a>
+    <a class="card tilt" href="/class7/class7.html">Class 7</a>
+    <a class="card tilt" href="/class8/class8.html">Class 8</a>
+    <a class="card tilt" href="/class9/class9.html">Class 9</a>
+    <a class="card tilt" href="/class10/class10.html">Class 10</a>
+    <a class="card tilt" href="/class11/class11.html">Class 11</a>
+    <a class="card tilt" href="/class12/class12.html">Class 12</a>
+  </div>
+</section>
 
-      <div class="hero-quick">
-        <a href="#classes" class="btn primary">Browse Classes</a>
-        <a href="#notes" class="btn">Explore Subjects</a>
-      </div>
+<!-- ================= SUBJECTS ================= -->
+<section id="notes" class="section container">
+  <h2 class="section-title">Subjects Covered</h2>
+
+  <div class="grid grid-subjects">
+    <a class="tile tilt" href="#"><div class="tile-3dicon">📐</div><div>Mathematics</div></a>
+    <a class="tile tilt" href="#"><div class="tile-3dicon">🔬</div><div>Science / EVS</div></a>
+    <a class="tile tilt" href="#"><div class="tile-3dicon">📖</div><div>English</div></a>
+    <a class="tile tilt" href="#"><div class="tile-3dicon">📝</div><div>Hindi</div></a>
+    <a class="tile tilt" href="#"><div class="tile-3dicon">⚛️</div><div>Physics</div></a>
+    <a class="tile tilt" href="#"><div class="tile-3dicon">🧪</div><div>Chemistry</div></a>
+    <a class="tile tilt" href="#"><div class="tile-3dicon">🧬</div><div>Biology</div></a>
+    <a class="tile tilt" href="#"><div class="tile-3dicon">🌍</div><div>Social Science</div></a>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section container">
+  <h2 class="section-title">About NCERT 3D Hub</h2>
+
+  <p>
+    NCERT 3D Hub is a student-focused learning platform offering accurate
+    NCERT notes and exercise solutions for Classes 1 to 12.
+    Our goal is to make learning simple, fast, and stress-free.
+  </p>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer id="contact" class="footer">
+  <div class="container footer-inner">
+
+    <div class="footer-col">
+      <h4>Study</h4>
+      <a href="#classes">Classes</a><br>
+      <a href="#notes">Subjects</a>
     </div>
-  </section>
 
-  <section id="classes" class="section container">
-    <h2 class="section-title">Choose Your Class</h2>
-    <div class="grid grid-classes">
-      <a class="card tilt" href="/class1/class1.html">Class 1</a>
-      <a class="card tilt" href="/class2/class2.html">Class 2</a>
-      <a class="card tilt" href="/class3/class3.html">Class 3</a>
-      <a class="card tilt" href="/class4/class4.html">Class 4</a>
-      <a class="card tilt" href="/class5/class5.html">Class 5</a>
-      <a class="card tilt" href="/class6/class6.html">Class 6</a>
-      <a class="card tilt" href="/class7/class7.html">Class 7</a>
-      <a class="card tilt" href="/class8/class8.html">Class 8</a>
-      <a class="card tilt" href="/class9/class9.html">Class 9</a>
-      <a class="card tilt" href="/class10/class10.html">Class 10</a>
-      <a class="card tilt" href="/class11/class11.html">Class 11</a>
-      <a class="card tilt" href="/class12/class12.html">Class 12</a>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <a href="mailto:ayushvishwakarma1728@gmail.com">Email</a><br>
+      <a href="#">Support</a>
     </div>
-  </section>
 
-  <section id="notes" class="section container">
-    <h2 class="section-title">Notes &amp; Solutions</h2>
-    <div class="grid grid-subjects">
-      <a class="tile tilt" href="#math"><div class="tile-3dicon">📐</div><div class="tile-title">Mathematics</div></a>
-      <a class="tile tilt" href="#science"><div class="tile-3dicon">🔬</div><div class="tile-title">Science</div></a>
-      <a class="tile tilt" href="#english"><div class="tile-3dicon">📖</div><div class="tile-title">English</div></a>
-      <a class="tile tilt" href="#hindi"><div class="tile-3dicon">📝</div><div class="tile-title">Hindi</div></a>
-      <a class="tile tilt" href="#physics"><div class="tile-3dicon">⚛️</div><div class="tile-title">Physics</div></a>
-      <a class="tile tilt" href="#chemistry"><div class="tile-3dicon">🧪</div><div class="tile-title">Chemistry</div></a>
-      <a class="tile tilt" href="#biology"><div class="tile-3dicon">🧬</div><div class="tile-title">Biology</div></a>
-      <a class="tile tilt" href="#social"><div class="tile-3dicon">🌍</div><div class="tile-title">Social Science</div></a>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <a href="https://m.youtube.com/@cubingworldwithayush">YouTube</a><br>
+      <a href="https://ayush-grocery.netlify.app/">Website</a>
     </div>
-  </section>
 
-  <section id="about" class="section container about">
-    <h2 class="section-title">About</h2>
-    <p>NCERT 3D Hub is a modern study companion providing class-wise notes and exercise solutions with a delightful 3D interface. Built for speed, clarity, and ease of use.</p>
-  </section>
+  </div>
 
-  <footer id="contact" class="footer">
-    <div class="container footer-inner">
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="#notes">Notes</a>
-        <a href="#notes">Solutions</a>
-        <a href="#classes">Classes</a>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <a href="#">ayushvishwakarma1728@gmail.com</a>
-        <a href="#">Support</a>
-      </div>
-      <div class="footer-col">
-        <h4>Follow</h4>
-        <div class="social-3d">
-          <a href="#" aria-label="Twitter">🐦Twitter</a><br><br>
-          <a href="https://m.youtube.com/@cubingworldwithayush" aria-label="YouTube">▶️Youtube</a><br><br>
-          <a href="https://ayush-grocery.netlify.app/" aria-label="Instagram">💻Website</a>
-        </div>
-      </div>
-    </div>
-    <div class="container legal">© <span id="y"></span> NCERT 3D Hub</div>
-  </footer>
+  <div class="container legal">
+    © <span id="y"></span> NCERT 3D Hub
+  </div>
+</footer>
 
-  <script src="https://unpkg.com/three@0.154.0/build/three.min.js"></script>
-  <script src="script.js"></script>
+<!-- Scripts -->
+<script src="https://unpkg.com/three@0.154.0/build/three.min.js" defer></script>
+<script src="script.js" defer></script>
+
 </body>
 </html>
